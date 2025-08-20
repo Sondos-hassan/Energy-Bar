@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalBite - Premium Energy Bars</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4f1ff 100%);
+        }
+        
+        .flavor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nutrition-bar {
+            height: 5px;
+            border-radius: 2.5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-gray-800">
+                        <span class="text-amber-600">Vital</span>Bite
+                    </a>
+                </div>
+                <div class="md:flex items-center hidden space-x-8">
+                    <a href="#features" class="text-gray-800 hover:text-amber-600">Features</a>
+                    <a href="#flavors" class="text-gray-800 hover:text-amber-600">Flavors</a>
+                    <a href="#testimonials" class="text-gray-800 hover:text-amber-600">Testimonials</a>
+                    <a href="#nutrition" class="text-gray-800 hover:text-amber-600">Nutrition</a>
+                </div>
+                <div class="md:block hidden">
+                    <button class="px-4 py-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition duration-300">
+                        Find a Store
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="text-gray-800 hover:text-amber-600">Features</a>
+                    <a href="#flavors" class="text-gray-800 hover:text-amber-600">Flavors</a>
+                    <a href="#testimonials" class="text-gray-800 hover:text-amber-600">Testimonials</a>
+                    <a href="#nutrition" class="text-gray-800 hover:text-amber-600">Nutrition</a>
+                    <button class="w-full px-4 py-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition duration-300">
+                        Find a Store
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Fuel Your <span class="text-amber-600">Adventure</span> With Nature's Best
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Our all-natural energy bars are packed with premium ingredients to give you sustained energy without the crash. Perfect for athletes, busy professionals, and outdoor enthusiasts.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="px-8 py-3 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition duration-300">
+                        Shop Now
+                    </button>
+                    <button class="px-8 py-3 border-2 border-amber-600 text-amber-600 rounded-full hover:bg-amber-50 transition duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img src="https://placehold.co/500x500" alt="Close-up of VitalBite energy bar with nuts, seeds and berries visible, showcasing natural ingredients with professional food photography lighting" class="rounded-xl shadow-xl w-4/5 mx-auto">
+                    <div class="absolute -bottom-8 -right-8 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-2 rounded-full mr-2">
+                                <i class="fas fa-leaf text-green-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium">100% Natural</p>
+                                <p class="text-xs text-gray-500">No artificial ingredients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose VitalBite?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our energy bars are crafted with care to provide the perfect balance of nutrition, taste, and convenience.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Sustained Energy</h3>
+                    <p class="text-gray-600">Slow-release carbohydrates and quality proteins provide lasting energy without the sugar crash.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">All-Natural</h3>
+                    <p class="text-gray-600">Made with organic ingredients, no artificial flavors, colors, or preservatives.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Nutrient Dense</h3>
+                    <p class="text-gray-600">Packed with vitamins, minerals, and antioxidants to support your active lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flavors Section -->
+    <section id="flavors" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Delicious Flavors</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Something for every taste, from sweet and fruity to rich and chocolatey.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Flavor 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md flavor-card transition duration-300">
+                    <div class="h-48 bg-amber-100 flex items-center justify-center">
+                        <img src="https://placehold.co/300x300" alt="Chocolate almond crunch energy bar with visible chunks of almonds and chocolate drizzled on top, placed on rustic wooden background" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Chocolate Almond</h3>
+                        <p class="text-gray-600 mb-4">Rich dark chocolate with crunchy almonds and a hint of sea salt.</p>
+                        <button class="text-amber-600 font-medium hover:text-amber-700">Learn more →</button>
+                    </div>
+                </div>
+                
+                <!-- Flavor 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md flavor-card transition duration-300">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <img src="https://placehold.co/300x300" alt="Berry blast energy bar with mixed berries and seeds visible, arranged on marble background" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Berry Blast</h3>
+                        <p class="text-gray-600 mb-4">Tart berries mixed with sunflower seeds and a touch of honey.</p>
+                        <button class="text-amber-600 font-medium hover:text-amber-700">Learn more →</button>
+                    </div>
+                </div>
+                
+                <!-- Flavor 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md flavor-card transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <img src="https://placehold.co/300x300" alt="Peanut butter protein energy bar with visible peanut pieces and chia seeds, on slate background" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Peanut Butter</h3>
+                        <p class="text-gray-600 mb-4">Creamy peanut butter with plant-based protein and chia seeds.</p>
+                        <button class="text-amber-600 font-medium hover:text-amber-700">Learn more →</button>
+                    </div>
+                </div>
+                
+                <!-- Flavor 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md flavor-card transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <img src="https://placehold.co/300x300" alt="Coconut chia energy bar with shredded coconut and chia seeds visible, placed on light oak wood" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Coconut Chia</h3>
+                        <p class="text-gray-600 mb-4">Tropical coconut with omega-rich chia seeds and vanilla.</p>
+                        <button class="text-amber-600 font-medium hover:text-amber-700">Learn more →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from athletes and busy professionals who fuel with VitalBite</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah J.</h4>
+                            <p class="text-sm text-gray-500">Professional Runner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I've tried dozens of energy bars, and VitalBite is the only one that doesn't upset my stomach during long runs. The Chocolate Almond flavor is my go-to before marathons."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael T.</h4>
+                            <p class="text-sm text-gray-500">Office Worker</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"These bars keep me going through afternoon slumps without the jitters I get from coffee. The Coconut Chia is delicious and keeps me full until dinner."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Jennifer K.</h4>
+                            <p class="text-sm text-gray-500">Yoga Instructor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I love that I can read all the ingredients and actually pronounce them! The Berry Blast flavor is perfect for post-yoga recovery when I need quick, clean energy."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star-half-alt text-amber-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Section -->
+    <section id="nutrition" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Clean. Simple. Nutritious.</h2>
+                    <p class="text-gray-600 mb-8">We believe in transparency. Every ingredient serves a purpose, providing the energy and nutrition your body needs.</p>
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-gray-700">Protein</span>
+                            <span class="font-bold text-gray-800">12g</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-amber-600 h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-gray-700">Fiber</span>
+                            <span class="font-bold text-gray-800">7g</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-gray-700">Sugar</span>
+                            <span class="font-bold text-gray-800">9g</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-red-400 h-2.5 rounded-full" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <button class="px-6 py-2 border-2 border-amber-600 text-amber-600 rounded-full hover:bg-amber-50 transition duration-300">
+                        See Full Nutrition Facts
+                    </button>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Ingredients You Can Trust</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-check text-green-500 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Organic whole grain oats - slow-release energy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-check text-green-500 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Plant-based proteins - easy digestion</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-check text-green-500 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Healthy fats from nuts and seeds - sustained fuel</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-check text-green-500 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Natural sweeteners - no refined sugar</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-check text-green-500 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Essential vitamins and minerals - added nutrition</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-amber-600">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Try VitalBite?</h2>
+            <p class="text-xl text-amber-100 max-w-2xl mx-auto mb-8">Join thousands of satisfied customers who choose VitalBite for clean, delicious energy.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="px-8 py-4 bg-white text-amber-600 rounded-full font-bold hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Shop All Flavors
+                </button>
+                <button class="px-8 py-4 border-2 border-white text-white rounded-full font-bold hover:bg-amber-700 transition duration-300">
+                    Find a Store Near You
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="text-amber-600">Vital</span>Bite
+                    </h3>
+                    <p class="text-gray-400">Premium energy bars made with nature's best ingredients to fuel your active lifestyle.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">All Flavors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Best Sellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Releases</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Gift Boxes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 VitalBite. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const menu = document.getElementById('mobile-menu');
+                if (!menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
